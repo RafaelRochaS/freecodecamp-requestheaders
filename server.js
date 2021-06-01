@@ -2,6 +2,8 @@ const fastify = require('fastify')({ logger: true });
 const PORT = process.env.PORT || 3000;
 const HOST = process.env.HOST || '0.0.0.0';
 
+fastify.register(require('fastify-cors'));
+
 fastify.get('/', async (request, reply) => {
   return { hello: 'world' }
 });
